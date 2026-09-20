@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-PROJECT_DIR = PROJECT_DIR = Path(__file__).resolve().parents[2]
+PROJECT_DIR = Path(__file__).resolve().parents[2]
 RESULTS_DIR = PROJECT_DIR / "data" / "results"
 PHASE17_DIR = RESULTS_DIR / "phase17"
 
@@ -16,15 +16,27 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
-    predictions = pd.read_csv(
-        PHASE17_DIR / "phase18_risk_predictions.csv"
-    )
-    systemic = pd.read_csv(
-        RESULTS_DIR / "dynamic_systemic_risk.csv"
-    )
-    shock = pd.read_csv(
-        RESULTS_DIR / "dynamic_shock_propagation.csv"
-    )
+    required_files = {
+        "predictions": PHASE17_DIR / "phase18_risk_predictions.csv",
+        "systemic": RESULTS_DIR / "dynamic_systemic_risk.csv",
+        "shock": RESULTS_DIR / "dynamic_shock_propagation.csv",
+    }
+
+    missing_files = [
+        str(path)
+        for path in required_files.values()
+        if not path.exists()
+    ]
+
+    if missing_files:
+        st.error("Required research data files are missing:")
+        for file in missing_files:
+            st.write(file)
+        st.stop()
+
+    predictions = pd.read_csv(required_files["predictions"])
+    systemic = pd.read_csv(required_files["systemic"])
+    shock = pd.read_csv(required_files["shock"])
 
     for df in [predictions, systemic, shock]:
         df["date"] = pd.to_datetime(df["date"]).dt.normalize()
