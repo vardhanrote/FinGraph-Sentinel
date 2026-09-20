@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-PROJECT_DIR = Path(r"C:\Users\ADMIN\FinGraph-Sentinel")
+PROJECT_DIR = PROJECT_DIR = Path(__file__).resolve().parents[2]
 RESULTS_DIR = PROJECT_DIR / "data" / "results"
 PHASE17_DIR = RESULTS_DIR / "phase17"
 
