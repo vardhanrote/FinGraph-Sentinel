@@ -30,6 +30,7 @@ The project combines financial network analysis, graph-based metrics, machine le
 ## Technology Stack
 
 ### Programming and Data Science
+
 - Python
 - NumPy
 - Pandas
@@ -38,11 +39,13 @@ The project combines financial network analysis, graph-based metrics, machine le
 - Matplotlib
 
 ### Financial Graph Analysis
+
 - NetworkX
 - Graph-based systemic risk metrics
 - Dynamic network analysis
 
 ### Machine Learning and Deep Learning
+
 - Logistic Regression
 - Gradient Boosting
 - Random Forest
@@ -50,6 +53,7 @@ The project combines financial network analysis, graph-based metrics, machine le
 - PyTorch Geometric
 
 ### Application and Development
+
 - Streamlit
 - Git and GitHub
 - Jupyter Notebooks
@@ -96,6 +100,28 @@ The project includes an interactive Streamlit dashboard for exploring:
 - Early-warning alerts
 - Shock propagation and impact
 - Key risk indicators
+
+## Dashboard Screenshots
+
+### Dashboard Overview
+
+![Dashboard Overview](docs/dashboard-overview.png)
+
+### Systemic Risk Analysis
+
+![Systemic Risk Analysis](docs/systemic-risk-analysis.png)
+
+### Risk Category Distribution
+
+![Risk Category Distribution](docs/risk-category-distribution.png)
+
+### Early-Warning Alerts
+
+![Early-Warning Alerts](docs/early-warning-alerts.png)
+
+### Company Risk and Shock Propagation
+
+![Company Risk and Shock Propagation](docs/company-risk-shock-propagation.png)
 
 ## Research and Validation
 
