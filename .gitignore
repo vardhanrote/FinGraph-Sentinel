@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+
+.venv/
+venv/
+env/
+
+.env
+
+.ipynb_checkpoints/
+
+data/raw/*
+data/processed/*
+
+models/*.pt
+models/*.pkl
+
+.DS_Store
+.venv-1/
+.venv-gnn/
+
+# Generated research results
+data/results/*
+
+# Generated visualizations
+data/outputs/*
+
