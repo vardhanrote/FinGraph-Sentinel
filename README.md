@@ -138,33 +138,57 @@ git clone https://github.com/vardhanrote/FinGraph-Sentinel.git
 cd FinGraph-Sentinel
 ```
 
-Create and activate a virtual environment:
+### 1. Dashboard Environment
 
-```bash
+Create a virtual environment:
+
+```powershell
 python -m venv .venv
 ```
 
-On Windows PowerShell:
+Activate it on Windows PowerShell:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-Install dependencies:
+Install dashboard dependencies:
 
 ```powershell
-pip install -r requirements-direct.txt
+python -m pip install -r requirements-direct.txt
 ```
 
-For graph deep-learning experiments, use the dedicated GNN environment and requirements.
+### 2. GNN Research Environment
 
-## Running the Dashboard
+Graph deep-learning experiments use a dedicated Python environment.
+
+Create the environment using Python 3.13:
+
+```powershell
+py -3.13 -m venv .venv-gnn
+```
+
+Activate it:
+
+```powershell
+.\.venv-gnn\Scripts\Activate.ps1
+```
+
+Install GNN dependencies:
+
+```powershell
+python -m pip install -r requirements-gnn-direct.txt
+```
+
+### 3. Run the Dashboard
 
 From the project root:
 
 ```powershell
 streamlit run app/dashboard/app.py
 ```
+
+The dashboard uses generated research outputs stored locally. These outputs are excluded from Git tracking and may need to be generated separately.
 
 ## Project Status
 
